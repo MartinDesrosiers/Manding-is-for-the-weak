@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I Need Healing Network", "I Need Healing Network.csproj", "{DE60610A-D435-69DB-A643-8692EAE4DBBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I Need Healing Network.Plugins", "I Need Healing Network.Plugins.csproj", "{D0B35C91-5EB3-8BF2-6501-36304EEB403D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I Need Healing Network.Editor", "I Need Healing Network.Editor.csproj", "{AA0FB29B-E02E-7E77-7687-8A441C632052}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE60610A-D435-69DB-A643-8692EAE4DBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE60610A-D435-69DB-A643-8692EAE4DBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE60610A-D435-69DB-A643-8692EAE4DBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE60610A-D435-69DB-A643-8692EAE4DBBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B35C91-5EB3-8BF2-6501-36304EEB403D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B35C91-5EB3-8BF2-6501-36304EEB403D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B35C91-5EB3-8BF2-6501-36304EEB403D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B35C91-5EB3-8BF2-6501-36304EEB403D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA0FB29B-E02E-7E77-7687-8A441C632052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA0FB29B-E02E-7E77-7687-8A441C632052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA0FB29B-E02E-7E77-7687-8A441C632052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA0FB29B-E02E-7E77-7687-8A441C632052}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

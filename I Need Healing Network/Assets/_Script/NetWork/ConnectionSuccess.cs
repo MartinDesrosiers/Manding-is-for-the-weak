@@ -1,0 +1,31 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ConnectionSuccess : NetWorkManager {
+    
+    public override void OnJoinedRoom()
+    {
+    }
+    public override void OnCreatedRoom()
+    {
+        if (PhotonNetwork.isMasterClient)
+            PhotonNetwork.LoadLevel(1);
+    }
+    public override void OnConnectedToPhoton()
+    {
+        Debug.Log("tamere");
+        StartCoroutine(SafetyWait());
+    }
+    IEnumerator SafetyWait()
+    {
+        float timer = 0f;
+        while(timer < 1f)
+        {
+            timer += timer + Time.fixedUnscaledDeltaTime;
+            yield return new WaitForSeconds(0.1f);
+        }
+        mainMenu.TriggerMainMenuButtons(true);
+    }
+}
+
