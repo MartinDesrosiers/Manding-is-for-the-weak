@@ -583,8 +583,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 159465806}
-  m_Father: {fileID: 698995463}
-  m_RootOrder: 3
+  m_Father: {fileID: 1923897639}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1923897640}
         m_MethodName: ChangePage
         m_Mode: 3
         m_Arguments:
@@ -881,13 +881,13 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 558586667}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1273844603}
-  m_Father: {fileID: 2049719034}
-  m_RootOrder: 2
+  m_Father: {fileID: 839408585}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -933,7 +933,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1801121048}
+      - m_Target: {fileID: 1971991352}
         m_MethodName: CancelButton
         m_Mode: 1
         m_Arguments:
@@ -1122,9 +1122,7 @@ RectTransform:
   m_Children:
   - {fileID: 1037124810}
   - {fileID: 892510617}
-  - {fileID: 1329363057}
-  - {fileID: 282389806}
-  - {fileID: 1580756452}
+  - {fileID: 1923897639}
   m_Father: {fileID: 1025767260}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1132,6 +1130,41 @@ RectTransform:
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.1, y: 0.4}
   m_SizeDelta: {x: 797.8, y: 449.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &839408584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 839408585}
+  m_Layer: 5
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &839408585
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 839408584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 558586668}
+  - {fileID: 1166791452}
+  m_Father: {fileID: 2049719034}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &867529725
 GameObject:
@@ -1384,8 +1417,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1801121048}
-        m_MethodName: ConnectToARoom
+      - m_Target: {fileID: 1311016537}
+        m_MethodName: CreateAndConnectToARoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1643,8 +1676,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1453606783}
-  m_Father: {fileID: 2049719034}
-  m_RootOrder: 3
+  m_Father: {fileID: 839408585}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1690,7 +1723,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1801121048}
+      - m_Target: {fileID: 1971991352}
         m_MethodName: RetryButton
         m_Mode: 1
         m_Arguments:
@@ -1818,6 +1851,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1311016536}
+  - component: {fileID: 1311016537}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -1846,6 +1880,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1311016537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1311016535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d4f456bc74f4249936b50ef6cc9394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1329363056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,13 +1920,13 @@ RectTransform:
   m_LocalScale: {x: 1.2861737, y: 1.2861737, z: 1.2861737}
   m_Children:
   - {fileID: 362587735}
-  m_Father: {fileID: 698995463}
-  m_RootOrder: 2
+  m_Father: {fileID: 1923897639}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8118232, y: 0.09714287}
   m_AnchorMax: {x: 0.9421769, y: 0.17714286}
-  m_AnchoredPosition: {x: -14.13, y: 2.5}
-  m_SizeDelta: {x: -28.26, y: -5}
+  m_AnchoredPosition: {x: 248.94064, y: -124.35485}
+  m_SizeDelta: {x: 62.700783, y: 22.968002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329363059
 MonoBehaviour:
@@ -1922,7 +1967,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1923897640}
         m_MethodName: QuitListOfRoom
         m_Mode: 1
         m_Arguments:
@@ -2248,8 +2293,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 343037285}
-  m_Father: {fileID: 698995463}
-  m_RootOrder: 4
+  m_Father: {fileID: 1923897639}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2295,7 +2340,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1923897640}
         m_MethodName: ChangePage
         m_Mode: 3
         m_Arguments:
@@ -2352,7 +2397,6 @@ GameObject:
   - component: {fileID: 1613661062}
   - component: {fileID: 1613661061}
   - component: {fileID: 1613661060}
-  - component: {fileID: 1613661063}
   m_Layer: 5
   m_Name: RandomGameButton
   m_TagString: Untagged
@@ -2418,8 +2462,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1801121048}
-        m_MethodName: JoinRandomRoom
+      - m_Target: {fileID: 1311016537}
+        m_MethodName: TryJoinRandomRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2427,17 +2471,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1613661063}
-        m_MethodName: Disable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Deactivate
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2475,17 +2508,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1613661058}
---- !u!114 &1613661063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1613661058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ed2a57dcf79b0a42a68559fe4dde1e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1683380857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2793,7 +2815,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1801121047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 292f3be7bbbcbd144b3162971ac7141e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cbed228e8844ed45b7c9871b13ee232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1801121049
@@ -2817,7 +2839,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1801121047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29dad6016cfb3f44fa5befc70d0d9a41, type: 3}
+  m_Script: {fileID: 11500000, guid: 86285eb4d7bd8874c9f2f42e04b00296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1801121051
@@ -2828,7 +2850,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 1801121047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8653b7f46c8abc340b964a47bb3af1ab, type: 3}
+  m_Script: {fileID: 11500000, guid: acd1cbe133fb4f541a77e156ca19c0df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1923897638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1923897639}
+  - component: {fileID: 1923897640}
+  m_Layer: 5
+  m_Name: Buttons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1923897639
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1923897638}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1329363057}
+  - {fileID: 282389806}
+  - {fileID: 1580756452}
+  m_Father: {fileID: 698995463}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1923897640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1923897638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d232b7995edc943b1728fa6ca8e9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1944634145
@@ -3104,11 +3174,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1971991347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449370fbd1ea2a64fa97597bc59fb7df, type: 3}
+  m_Script: {fileID: 11500000, guid: da07a515ea266f64188af52e3c66d6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomInfoButton: {fileID: 114192958217222338, guid: 8055e5baccea6864081260da867a64a6,
-    type: 2}
 --- !u!1 &2006783301
 GameObject:
   m_ObjectHideFlags: 0
@@ -3169,8 +3237,7 @@ RectTransform:
   m_Children:
   - {fileID: 1348261557}
   - {fileID: 1358197529}
-  - {fileID: 558586668}
-  - {fileID: 1166791452}
+  - {fileID: 839408585}
   m_Father: {fileID: 1025767260}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3288,8 +3355,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ShowListOfRoom
+      - m_Target: {fileID: 1311016537}
+        m_MethodName: JoinRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

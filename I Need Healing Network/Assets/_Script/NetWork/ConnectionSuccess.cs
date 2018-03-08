@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConnectionSuccess : NetWorkManager {
-    
+public class ConnectionSuccess : Photon.PunBehaviour
+{
     public override void OnJoinedRoom()
     {
     }
@@ -25,7 +25,8 @@ public class ConnectionSuccess : NetWorkManager {
             timer += timer + Time.fixedUnscaledDeltaTime;
             yield return new WaitForSeconds(0.1f);
         }
-        mainMenu.TriggerMainMenuButtons(true);
+        
+        //NetWorkManager.Instance.mainMenu.TriggerMainMenuButtons(true);
     }
 }
 

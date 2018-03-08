@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.1.1f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -102,7 +100,11 @@
     <Compile Include="Assets\_Script\MageScript\MageSpawnPlaceManager.cs" />
     <Compile Include="Assets\_Script\MageScript\SpawnMage.cs" />
     <Compile Include="Assets\_Script\MageScript\Water.cs" />
-    <Compile Include="Assets\_Script\MainMenu\JoinGameButton.cs" />
+    <Compile Include="Assets\_Script\MainMenu\Buttons\Buttons.cs" />
+    <Compile Include="Assets\_Script\MainMenu\Buttons\InterractableTrigger.cs" />
+    <Compile Include="Assets\_Script\MainMenu\Buttons\ListOfRoomsScript.cs" />
+    <Compile Include="Assets\_Script\MainMenu\Buttons\MenuButtonsScript.cs" />
+    <Compile Include="Assets\_Script\MainMenu\Buttons\QuitRoomButton.cs" />
     <Compile Include="Assets\_Script\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\_Script\NetWork\ConnectionError.cs" />
     <Compile Include="Assets\_Script\NetWork\ConnectionSuccess.cs" />
