@@ -5,90 +5,55 @@ using UnityEngine.UI;
 
 public class NetWorkManager : Photon.PunBehaviour {
     public static NetWorkManager networkManager;
-    protected MainMenu mainMenu;
     TypedLobby typeLobby;
     LobbyType lobbyType;
     string masterServerAdd;
     string appID;
     // Use this for initialization
-    public NetWorkManager() { }
-
+    public NetWorkManager(){}
     public static NetWorkManager Instance
     {
         get
         {
-            if (networkManager == null)
-            {
-                networkManager = new NetWorkManager();
-            }
             return networkManager;
         }
     }
-    void Awake () {
+    void Awake ()
+    {
+        if (networkManager != null && networkManager != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            networkManager = this;
+            DontDestroyOnLoad(gameObject);
+        }
         PhotonNetwork.lobby.Name = "General Lobby";
         masterServerAdd = "Cae";
-        appID = "a50f0a2c-bfdd-454a-83c1-0c5ed1fa7630";
+        appID = "a50f0a2c-bfdd-454a-83c1-0c5ed1fa7630";//appId. Can't play online without that
+        PhotonNetwork.PhotonServerSettings.AppID = appID;
+        PhotonNetwork.ConnectToRegion(CloudRegionCode.cae, "1.0");
         ExitGames.Client.Photon.Hashtable PlayerProperty = new ExitGames.Client.Photon.Hashtable();
         PlayerProperty["Ping"] = PhotonNetwork.GetPing();
         PhotonNetwork.player.SetCustomProperties(PlayerProperty);
-        DontDestroyOnLoad(gameObject);
-	}
+    }
     public void Start()
     {
         Debug.Log("NetWorkStart");
-        mainMenu = GameObject.Find("MainMenu").GetComponent<MainMenu>();
         ConnectToPhotonServer();
     }
-    void ConnectToPhotonServer()
+    public void ConnectToPhotonServer()
     {
         PhotonNetwork.ConnectUsingSettings("0.1v");
         PhotonNetwork.automaticallySyncScene = true;
     }
-    public void ConnectToARoom()
-    {
-        string roomNameEntered;
-        mainMenu.TriggerMainMenuButtons(false);
-        if (!PhotonNetwork.insideLobby)
-        {
-            Debug.Log("not inside lobby");
-            return;
-        }
-        roomNameEntered = mainMenu.GetInputEntered();
-        if (roomNameEntered != "")
-        {
-            if (!LookIfNameIsAlreadyTaken(roomNameEntered))
-                ConnectToNetwork(roomNameEntered);
-            else
-            {
-                StartCoroutine(mainMenu.NameTakenTimer());
-                mainMenu.TriggerMainMenuButtons(true);
-            }
-        }
-    }
-    bool LookIfNameIsAlreadyTaken(string name)
-    {
-        foreach(RoomInfo info in PhotonNetwork.GetRoomList())
-        {
-            if (name == info.Name)
-                return true;
-        }
-        return false;
-    }
     public void ConnectToNetwork(string roomName = "Room 1")
     {
+        //Set the room options
         RoomOptions ro = new RoomOptions();
         ro.MaxPlayers = 4;
         PhotonNetwork.JoinOrCreateRoom(roomName, ro, typeLobby);
-        StartCoroutine(WaitUntilJoinedRoom());
-    }
-    public void JoinRandomRoom()
-    {
-        if (!PhotonNetwork.insideLobby)
-        {
-            Debug.Log("not connected");
-            return;
-        }
-        PhotonNetwork.JoinRandomRoom();
         StartCoroutine(WaitUntilJoinedRoom());
     }
     public void Disconnect()
@@ -99,8 +64,8 @@ public class NetWorkManager : Photon.PunBehaviour {
     }
     public override void OnLeftRoom()
     {
-        mainMenu.TriggerMainMenuButtons(true);
-        mainMenu.ShowListOfRoom();
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MainMenu")
+            PhotonNetwork.LoadLevel("MainMenu");
     }
     public void QuitRoom()
     {
@@ -113,16 +78,7 @@ public class NetWorkManager : Photon.PunBehaviour {
         }
         PhotonNetwork.LeaveRoom();
     }
-    public void CancelButton()
-    {
-        mainMenu.UnableToConnectWindow(false);
-    }
-    public void RetryButton()
-    {
-        mainMenu.UnableToConnectWindow(false);
-        ConnectToPhotonServer();
-    }
-    IEnumerator WaitUntilJoinedRoom()
+    public IEnumerator WaitUntilJoinedRoom()
     {
         while (!PhotonNetwork.inRoom)
         {

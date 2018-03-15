@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConnectionError : NetWorkManager {
-
+public class ConnectionError : Photon.PunBehaviour
+{
+    MainMenu mainMenu;
+    private void Start()
+    {
+        mainMenu = GameObject.Find("MainMenu").GetComponent<MainMenu>();
+    }
     public override void OnFailedToConnectToPhoton(DisconnectCause cause)
     {
         mainMenu.UnableToConnectWindow(true);
@@ -13,7 +18,6 @@ public class ConnectionError : NetWorkManager {
         foreach (object o in codeAndMsg)
             Debug.Log(o.ToString());
         StartCoroutine(mainMenu.FailedToConnect("Can't Create room"));
-        mainMenu.TriggerMainMenuButtons(true);
     }
     public override void OnPhotonJoinRoomFailed(object[] codeAndMsg)
     {
