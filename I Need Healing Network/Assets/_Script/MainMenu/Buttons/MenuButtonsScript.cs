@@ -59,5 +59,6 @@ public class MenuButtonsScript : Buttons {
     {
         mainMenu.GetRoomInfo.gameObject.SetActive(true);
         mainMenu.GetMenu.gameObject.SetActive(false);
+        mainMenu.GetRoomInfo.GetComponent<ListOfRoomsScript>().ShowListOfRoom();
     }
 }

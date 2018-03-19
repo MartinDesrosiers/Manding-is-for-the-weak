@@ -46,13 +46,15 @@ public class NetWorkManager : Photon.PunBehaviour {
     public void ConnectToPhotonServer()
     {
         PhotonNetwork.ConnectUsingSettings("0.1v");
-        PhotonNetwork.automaticallySyncScene = true;
+        PhotonNetwork.automaticallySyncScene = false;
     }
     public void ConnectToNetwork(string roomName = "Room 1")
     {
         //Set the room options
         RoomOptions ro = new RoomOptions();
         ro.MaxPlayers = 4;
+        ro.PublishUserId = true;
+        ro.CleanupCacheOnLeave = true;
         PhotonNetwork.JoinOrCreateRoom(roomName, ro, typeLobby);
         StartCoroutine(WaitUntilJoinedRoom());
     }

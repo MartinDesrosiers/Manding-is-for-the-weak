@@ -44,4 +44,12 @@ MonoBehaviour:
   - SetMage
   - SetSpawnPoint
   - PlayerSpawningPlaces
+  - IncrementI
+  - UpdateNetworkPlayerPos
+  - StartGame
+  - CallStartGame
+  - AddPayer
+  - AddPlayer
+  - AddPlayerToList
+  - SetIsAttacking
   DisableAutoOpenWizard: 1

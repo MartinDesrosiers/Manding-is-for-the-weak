@@ -6,6 +6,7 @@ public class ConnectionSuccess : Photon.PunBehaviour
 {
     public override void OnJoinedRoom()
     {
+        PhotonNetwork.LoadLevel(1);
     }
     public override void OnCreatedRoom()
     {
@@ -14,7 +15,6 @@ public class ConnectionSuccess : Photon.PunBehaviour
     }
     public override void OnConnectedToPhoton()
     {
-        Debug.Log("tamere");
         StartCoroutine(SafetyWait());
     }
     IEnumerator SafetyWait()
@@ -25,7 +25,6 @@ public class ConnectionSuccess : Photon.PunBehaviour
             timer += timer + Time.fixedUnscaledDeltaTime;
             yield return new WaitForSeconds(0.1f);
         }
-        
         //NetWorkManager.Instance.mainMenu.TriggerMainMenuButtons(true);
     }
 }
