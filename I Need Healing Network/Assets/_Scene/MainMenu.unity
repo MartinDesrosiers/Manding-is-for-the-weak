@@ -1062,7 +1062,6 @@ GameObject:
   m_Component:
   - component: {fileID: 696599024}
   - component: {fileID: 696599023}
-  - component: {fileID: 696599025}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -1083,7 +1082,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ping: {fileID: 223960443440607670, guid: 26fee8aff6e41fa4691b222421bd780d, type: 2}
   spawnMage: {fileID: 1878228118233660, guid: df5b03e09483a35448bef65a8a8bda50, type: 2}
-  players: []
 --- !u!4 &696599024
 Transform:
   m_ObjectHideFlags: 0
@@ -1097,32 +1095,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &696599025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 696599022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ownerId: 0
-  group: 0
-  OwnerShipWasTransfered: 0
-  prefixBackup: -1
-  synchronization: 0
-  onSerializeTransformOption: 3
-  onSerializeRigidBodyOption: 2
-  ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 0}
-  ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
-  currentMasterID: -1
-  isRuntimeInstantiated: 0
 --- !u!1 &698995462
 GameObject:
   m_ObjectHideFlags: 0

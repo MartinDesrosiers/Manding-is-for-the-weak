@@ -104,8 +104,6 @@
     <Compile Include="Assets\_Script\MainMenu\Buttons\InterractableTrigger.cs" />
     <Compile Include="Assets\_Script\MainMenu\Buttons\ListOfRoomsScript.cs" />
     <Compile Include="Assets\_Script\MainMenu\Buttons\MenuButtonsScript.cs" />
-    <Compile Include="Assets\_Script\MainMenu\Buttons\OnlineMenuScript.cs" />
-    <Compile Include="Assets\_Script\MainMenu\Buttons\PlayButtonScript.cs" />
     <Compile Include="Assets\_Script\MainMenu\Buttons\QuitRoomButton.cs" />
     <Compile Include="Assets\_Script\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\_Script\NetWork\ConnectionError.cs" />

@@ -22,27 +22,20 @@ public class ListOfRoomsScript : Buttons {
     //Destroy buttons when not needed
     public void QuitListOfRoom()
     {
-        DestroyButtonsList();
-        mainMenu.GetRoomInfo.SetActive(false);
-        mainMenu.GetMenu.gameObject.SetActive(true);
-        TriggerMainMenuButtons(true);
-    }
-    void DestroyButtonsList()
-    {
-        if (button.Length < 1)
-            return;
         for (int i = 0; i < button.Length; i++)
         {
             if (button[i] != null)
                 Destroy(button[i].gameObject);
         }
+        mainMenu.GetRoomInfo.SetActive(false);
+        mainMenu.GetMenu.gameObject.SetActive(true);
+        TriggerMainMenuButtons(true);
     }
     //Get a list of room, max 4, and show them.
     public void ShowListOfRoom()
     {
         roomInfo = PhotonNetwork.GetRoomList();
         int limit = page * limitPerPage;
-        DestroyButtonsList();
         for (int i = limit - limitPerPage; i < limit; i++)
         {
             if (i >= roomInfo.Length)
@@ -64,6 +57,5 @@ public class ListOfRoomsScript : Buttons {
         if (page + nextOrPrevious == 0 || page * limitPerPage >= roomInfo.Length)
             return;
         page += nextOrPrevious;
-        ShowListOfRoom();
     }
 }

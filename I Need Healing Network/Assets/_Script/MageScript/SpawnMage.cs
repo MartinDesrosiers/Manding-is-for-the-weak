@@ -6,14 +6,17 @@ public class SpawnMage : Photon.PunBehaviour {
     [SerializeField]
     GameObject magePrefab;
     GameObject mage;
+    GameObject player;
     GameObject spawningPoint;
-    int i = 0;
+    Vector3 position;
     // Use this for initialization
     void Start()
     {
-        mage = Instantiate(magePrefab, transform.position, Quaternion.identity);
+        position = new Vector3();
+        mage = Instantiate(magePrefab, transform.position,Quaternion.identity);
         spawningPoint = mage.transform.GetChild(1).gameObject;
-        _GameManager.Instance.AddPlayer(SpawnPlace());
+        position = SpawnPlace();
+        PhotonNetwork.Instantiate("PlayerMain", position, Quaternion.identity, 0);
     }
 
     Vector3 SpawnPlace()

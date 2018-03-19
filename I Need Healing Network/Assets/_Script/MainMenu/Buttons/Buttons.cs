@@ -8,6 +8,7 @@ public class Buttons : Photon.PunBehaviour {
     // Use this for initialization
     protected virtual void Start () {
         mainMenu = GameObject.Find("MainMenu").GetComponent<MainMenu>();
+        Debug.Log(mainMenu);
         if (PhotonNetwork.connected)
             TriggerMainMenuButtons(true);
     }
