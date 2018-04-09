@@ -10,12 +10,13 @@ public class MainMenu : Photon.PunBehaviour {
     GameObject unableToConnect;
     GameObject roomInfoScreen;
     InputField inputField;
+    InputField playerNameInputField;
     Text takenText;
     int nbrOfRooms;
     #region GetSet
     public GameObject GetRoomInfo { get { return roomInfoScreen; } }
     public GameObject GetMenu { get { return menu; } }
-#endregion
+    #endregion
     // Use this for initialization
     public void Awake () {
         nbrOfRooms = 0;
@@ -24,7 +25,11 @@ public class MainMenu : Photon.PunBehaviour {
         unableToConnect = transform.GetChild(0).GetChild(2).gameObject;
         roomInfoScreen = transform.GetChild(0).GetChild(3).gameObject;
         inputField = ObjectFinders.FindAnyChild<InputField>(transform, "RoomNameField");
+        playerNameInputField = ObjectFinders.FindAnyChild<InputField>(transform, "PlayerName");
         takenText = inputField.transform.GetChild(1).GetComponent<Text>();
+        connectingScreen.SetActive(false);
+        unableToConnect.SetActive(false);
+        roomInfoScreen.SetActive(false);
     }
     private void Start()
     {
@@ -52,6 +57,10 @@ public class MainMenu : Photon.PunBehaviour {
     public string GetInputEntered()
     {
         return inputField.text.ToString();
+    }
+    public string GetPlayerNameEntered()
+    {
+        return playerNameInputField.text;
     }
     public void CancelButton()
     {

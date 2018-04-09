@@ -6,16 +6,14 @@ using UnityEngine.UI;
 public class Buttons : Photon.PunBehaviour {
     protected MainMenu mainMenu;
     // Use this for initialization
-    protected virtual void Start () {
+    protected void Init () {
         mainMenu = GameObject.Find("MainMenu").GetComponent<MainMenu>();
-        Debug.Log(mainMenu);
         if (PhotonNetwork.connected)
             TriggerMainMenuButtons(true);
     }
     public override void OnConnectedToPhoton()
     {
         TriggerMainMenuButtons(true);
-        Debug.Log("lghaskfjgh");
     }
     public void TriggerMainMenuButtons(bool active)
     {

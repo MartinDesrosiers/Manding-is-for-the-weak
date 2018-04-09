@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class NetWorkManager : Photon.PunBehaviour {
-    public static NetWorkManager networkManager;
+    public static NetWorkManager networkManager = null;
+    public ExitGames.Client.Photon.Hashtable PlayerProperty;
     TypedLobby typeLobby;
     LobbyType lobbyType;
     string masterServerAdd;
@@ -15,26 +16,29 @@ public class NetWorkManager : Photon.PunBehaviour {
     {
         get
         {
+            if (networkManager == null)
+            {
+                networkManager = new NetWorkManager();
+            }
             return networkManager;
         }
     }
+   
     void Awake ()
     {
-        if (networkManager != null && networkManager != this)
-        {
-            Destroy(gameObject);
-        }
-        else
+        if (networkManager == null)
         {
             networkManager = this;
             DontDestroyOnLoad(gameObject);
         }
+        else
+            DestroyImmediate(gameObject);
         PhotonNetwork.lobby.Name = "General Lobby";
         masterServerAdd = "Cae";
         appID = "a50f0a2c-bfdd-454a-83c1-0c5ed1fa7630";//appId. Can't play online without that
         PhotonNetwork.PhotonServerSettings.AppID = appID;
         PhotonNetwork.ConnectToRegion(CloudRegionCode.cae, "1.0");
-        ExitGames.Client.Photon.Hashtable PlayerProperty = new ExitGames.Client.Photon.Hashtable();
+        PlayerProperty = new ExitGames.Client.Photon.Hashtable();
         PlayerProperty["Ping"] = PhotonNetwork.GetPing();
         PhotonNetwork.player.SetCustomProperties(PlayerProperty);
     }
@@ -46,13 +50,15 @@ public class NetWorkManager : Photon.PunBehaviour {
     public void ConnectToPhotonServer()
     {
         PhotonNetwork.ConnectUsingSettings("0.1v");
-        PhotonNetwork.automaticallySyncScene = true;
+        PhotonNetwork.automaticallySyncScene = false;
     }
     public void ConnectToNetwork(string roomName = "Room 1")
     {
         //Set the room options
         RoomOptions ro = new RoomOptions();
         ro.MaxPlayers = 4;
+        ro.PublishUserId = true;
+        ro.CleanupCacheOnLeave = true;
         PhotonNetwork.JoinOrCreateRoom(roomName, ro, typeLobby);
         StartCoroutine(WaitUntilJoinedRoom());
     }

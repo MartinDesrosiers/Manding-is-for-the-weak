@@ -8,34 +8,37 @@ public class ListOfRoomsScript : Buttons {
     Button[] button;
     int page;
     int limitPerPage;
-    protected override void Start()
+    private void Start()
     {
         page = 1;
         limitPerPage = 4;
-        button = new Button[4];
-        base.Start();
-    }
-    private void OnEnable()
-    {
+        button = new Button[limitPerPage];
+        Init();
         ShowListOfRoom();
     }
     //Destroy buttons when not needed
     public void QuitListOfRoom()
     {
-        for (int i = 0; i < button.Length; i++)
-        {
-            if (button[i] != null)
-                Destroy(button[i].gameObject);
-        }
+        DestroyButtonsList();
         mainMenu.GetRoomInfo.SetActive(false);
         mainMenu.GetMenu.gameObject.SetActive(true);
         TriggerMainMenuButtons(true);
     }
-    //Get a list of room, max 4, and show them.
-    public void ShowListOfRoom()
+    void DestroyButtonsList()
+    {
+        if(button != null)
+         for (int i = 0; i<button.Length; i++)
+         {
+            if (button[i] != null)
+                 Destroy(button[i].gameObject);
+         }
+    }
+//Get a list of room, max 4, and show them.
+public void ShowListOfRoom()
     {
         roomInfo = PhotonNetwork.GetRoomList();
         int limit = page * limitPerPage;
+        DestroyButtonsList();
         for (int i = limit - limitPerPage; i < limit; i++)
         {
             if (i >= roomInfo.Length)
@@ -45,11 +48,12 @@ public class ListOfRoomsScript : Buttons {
             }
             //Create and set info on each button
             button[i] = Instantiate(Resources.Load(ROOMINFOBUTTON, typeof(Button)) as Button,
-                                 mainMenu.GetRoomInfo.transform.GetChild(1).GetChild(i).position,
+                                 mainMenu.GetRoomInfo.transform.GetChild(1).GetChild(i).transform.position,
                                  Quaternion.identity,
                                  transform);
             button[i].transform.GetChild(0).GetComponent<Text>().text = roomInfo[i].Name;
             button[i].transform.GetChild(1).GetComponent<Text>().text = roomInfo[i].PlayerCount.ToString();
+            button[i].transform.GetComponent<JoinRoom>().Init(roomInfo[i].Name, roomInfo[i].PlayerCount);
         }
     }
     public void ChangePage(int nextOrPrevious)
@@ -57,5 +61,6 @@ public class ListOfRoomsScript : Buttons {
         if (page + nextOrPrevious == 0 || page * limitPerPage >= roomInfo.Length)
             return;
         page += nextOrPrevious;
+        ShowListOfRoom();
     }
 }

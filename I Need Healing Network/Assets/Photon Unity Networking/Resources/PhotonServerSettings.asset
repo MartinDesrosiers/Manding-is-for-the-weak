@@ -44,4 +44,10 @@ MonoBehaviour:
   - SetMage
   - SetSpawnPoint
   - PlayerSpawningPlaces
+  - CallStartGame
+  - SetIsAttacking
+  - Hurt
+  - GetHurt
+  - UpdateLifeText
+  - AddPlayer
   DisableAutoOpenWizard: 1

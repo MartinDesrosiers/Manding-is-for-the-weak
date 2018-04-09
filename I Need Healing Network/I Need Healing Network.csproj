@@ -97,23 +97,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Script\_GameManager.cs" />
-    <Compile Include="Assets\_Script\MageScript\MageSpawnPlaceManager.cs" />
+    <Compile Include="Assets\_Script\LifeScript.cs" />
     <Compile Include="Assets\_Script\MageScript\SpawnMage.cs" />
     <Compile Include="Assets\_Script\MageScript\Water.cs" />
     <Compile Include="Assets\_Script\MainMenu\Buttons\Buttons.cs" />
     <Compile Include="Assets\_Script\MainMenu\Buttons\InterractableTrigger.cs" />
+    <Compile Include="Assets\_Script\MainMenu\Buttons\JoinRoom.cs" />
     <Compile Include="Assets\_Script\MainMenu\Buttons\ListOfRoomsScript.cs" />
     <Compile Include="Assets\_Script\MainMenu\Buttons\MenuButtonsScript.cs" />
+    <Compile Include="Assets\_Script\MainMenu\Buttons\OnlineMenuScript.cs" />
+    <Compile Include="Assets\_Script\MainMenu\Buttons\PlayButtonScript.cs" />
     <Compile Include="Assets\_Script\MainMenu\Buttons\QuitRoomButton.cs" />
     <Compile Include="Assets\_Script\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\_Script\NetWork\ConnectionError.cs" />
     <Compile Include="Assets\_Script\NetWork\ConnectionSuccess.cs" />
     <Compile Include="Assets\_Script\NetWork\NetWorkManager.cs" />
     <Compile Include="Assets\_Script\NetWork\RoomPlayerInfo.cs" />
+    <Compile Include="Assets\_Script\PlayerScript\CharacterMain.cs" />
     <Compile Include="Assets\_Script\PlayerScript\Control.cs" />
     <Compile Include="Assets\_Script\PlayerScript\Player.cs" />
-    <Compile Include="Assets\_Script\PlayerScript\Spawn.cs" />
     <Compile Include="Assets\_Script\Tools\ObjectFinders.cs" />
+    <Compile Include="Assets\_Script\Tools\ToolsScript.cs" />
+    <Compile Include="Assets\_Script\Weapons\WeaponsScript.cs" />
     <Compile Include="Assets\Deactivate.cs" />
     <Compile Include="Assets\leaveRoomButton.cs" />
     <Compile Include="Assets\Photon Unity Networking\Plugins\PhotonNetwork\CustomTypes.cs" />

@@ -72,7 +72,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1305358210185222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 6f2d10f5b32aee649a0fc73259caf427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114192958217222338
@@ -115,7 +115,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114097518753066114}
-        m_MethodName: JoinRoom
+        m_MethodName: JoinTheRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -255,8 +255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07, y: 0.6866726}
   m_AnchorMax: {x: 0.7367742, y: 0.8401211}
-  m_AnchoredPosition: {x: -84.61673, y: -54.770966}
-  m_SizeDelta: {x: -117.00001, y: -14}
+  m_AnchoredPosition: {x: -84.61673, y: -78.41}
+  m_SizeDelta: {x: 117, y: 22.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224235143057355718
 RectTransform:
@@ -291,6 +291,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 130, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}

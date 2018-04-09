@@ -1489,7 +1489,6 @@ public static class PhotonNetwork
 
         if (region != CloudRegionCode.none)
         {
-            Debug.Log("ConnectToRegion: " + region);
             return networkingPeer.ConnectToRegionMaster(region);
         }
 

@@ -6,6 +6,6 @@ public class QuitRoomButton : MonoBehaviour {
 
 	public void QuitRoom()
     {
-        NetWorkManager.Instance.Disconnect();
+        _GameManager.Instance.QuitGame();
     }
 }

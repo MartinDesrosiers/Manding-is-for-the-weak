@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuButtonsScript : Buttons {
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
+        Init();
     }
     public void CreateAndConnectToARoom()
     {
         string roomNameEntered;
+        string playerNameEntered;
         //Set interactable to false to avoid player to click on the button again while connecting;
         if (!PhotonNetwork.insideLobby)
         {
@@ -20,7 +21,10 @@ public class MenuButtonsScript : Buttons {
         //verifie if the name is already taken. if yes, choose another.
         //Can't create without a name
         roomNameEntered = mainMenu.GetInputEntered();
-        if (roomNameEntered != "")
+        playerNameEntered = mainMenu.GetPlayerNameEntered();
+        _GameManager.Instance.SetInstantiationObject();
+
+        if (roomNameEntered != "" && playerNameEntered != "")
         {
             TriggerMainMenuButtons(false);
             if (!LookIfNameIsAlreadyTaken(roomNameEntered))
@@ -59,5 +63,6 @@ public class MenuButtonsScript : Buttons {
     {
         mainMenu.GetRoomInfo.gameObject.SetActive(true);
         mainMenu.GetMenu.gameObject.SetActive(false);
+        mainMenu.GetRoomInfo.transform.GetChild(2).GetComponent<ListOfRoomsScript>().ShowListOfRoom();
     }
 }
